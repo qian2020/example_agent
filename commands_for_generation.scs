@@ -1,0 +1,11 @@
+ui_menu_na_generation <- ui_user_command_class_noatom;;
+
+ui_menu_na_generation => nrel_main_idtf:[Генерация китайское слово](*<-lang_ru;;*);;
+
+ui_menu_na_generation => nrel_main_idtf:[Generation Chinese word](*<-lang_en;;*);;
+
+ui_menu_na_generation <= nrel_ui_commands_decomposition:
+    {
+        ui_menu_find_lexis
+    };;
+   
