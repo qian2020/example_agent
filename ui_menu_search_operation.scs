@@ -1,13 +1,13 @@
-ui_menu_search_operation<-ui_user_command_class_atom;ui_user_command_class_view_kb;;
-ui_menu_search_operation=>nrel_main_idtf:[Запрос поиска](*<-lang_ru;;*);;
-ui_menu_search_operation=>nrel_main_idtf:[Request search](*<-lang_en;;*);;
-ui_menu_search_operation=>ui_nrel_command_template:
+ui_menu_search_operation <- ui_user_command_class_atom; ui_user_command_class_view_kb;;
+ui_menu_search_operation => nrel_main_idtf:[Запрос поиска](*<-lang_ru;;*);;
+ui_menu_search_operation => nrel_main_idtf:[Request search](*<-lang_en;;*);;
+ui_menu_search_operation => ui_nrel_command_template:
     [*
-        question_search_operation_->._question_search_operation_instance
+        question_search_operation _-> ._question_search_operation_instance
             (*
                 _->ui_arg_1;;
             *);;
-        ._question_search_operation_instance_<-question;;
+        ._question_search_operation_instance _<- question;;
     *];;
-ui_menu_search_operation=>ui_nrel_command_lang_template:[Запрос поиска:$ui_arg_1](*<-lang_ru;;*);;
-ui_menu_search_operation=>ui_nrel_command_lang_template:[Request of search:$ui_arg_1](*<-lang_en;;*);;
+ui_menu_search_operation => ui_nrel_command_lang_template:[Запрос поиска:$ui_arg_1](*<-lang_ru;;*);;
+ui_menu_search_operation => ui_nrel_command_lang_template:[Request of search:$ui_arg_1](*<-lang_en;;*);;

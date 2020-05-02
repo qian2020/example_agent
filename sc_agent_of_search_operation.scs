@@ -41,17 +41,17 @@ sc_agent_of_search_operation
 
 ..sc_agent_of_search_operation_initiation_condition
 =[*
-    question_search_operation_->.._question;;
-    question_initiated_->.._question;;
-    question_->.._question;;
-    .._question_->.._parameter;;
+    question_search_operation _->.._question;;
+    question_initiated _-> .._question;;
+    question _-> .._question;;
+    .._question _-> .._parameter;;
 *];;
 
 ..sc_agent_of_search_operation_result
 =[*
-    question_search_operation_->.._question;;
-    question_finished_->.._question;;
-    question_->.._question;;
-    .._question_=>nrel_answer::.._answer;;
-    .._question_->.._parameter;;
+    question_search_operation _-> .._question;;
+    question_finished _-> .._question;;
+    question _-> .._question;;
+    .._question _=> nrel_answer:: .._answer;;
+    .._question _-> .._parameter;;
 *];;    

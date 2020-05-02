@@ -10,24 +10,33 @@ scp_program->agent_proc_search_operation(*
 		->rrel_2:rrel_in:_input_arc;;
 	*);;
 
-	->rrel_operators:.agent_proc_search_operation_operator_set(*
-		->rrel_init:.agent_proc_search_operation_operator1(*
-		<-searchElStr3;;
-		->rrel_1:rrel_assign:rrel_scp_var:_temp;;
-        ->rrel_2:rrel_fixed:rrel_scp_var:_input_arc;;
-        ->rrel_3:rrel_assign:rrel_scp_var:_quest;;
+	-> rrel_operators:.agent_proc_search_operation_operator_set(*
 		
-		=>nrel_goto:.agent_proc_search_operation_operator2;;
+        ->rrel_init: .agent_proc_search_operation_operator1(*
+		    <-searchElStr3;;
+		    ->rrel_1:rrel_assign:rrel_scp_var:_temp;;
+            ->rrel_2:rrel_fixed:rrel_scp_var:_input_arc;;
+            ->rrel_3:rrel_assign:rrel_scp_var:_quest;;
+		
+		    =>nrel_goto:.agent_proc_search_operation_operator2;;
 		*);;
 		
 		->.agent_proc_search_operation_operator2(*
-		<-searchElStr3;;
-		->rrel_1:rrel_fixed:rrel_scp_const:question_search_operation;;
-		->rrel_2:rrel_assign:rrel_pos_const_perm:rrel_scp_var:_arc;;
-		->rrel_3:rrel_fixed:rrel_scp_var:_quest;;
+		    <-searchElStr3;;
+		    ->rrel_1:rrel_fixed:rrel_scp_const:question_search_operation;;
+		    ->rrel_2:rrel_assign:rrel_pos_const_perm:rrel_scp_var:_arc;;
+		    ->rrel_3:rrel_fixed:rrel_scp_var:_quest;;
 		
-        =>nrel_then:.agent_proc_search_operation_operator3;;
-		=>nrel_else:.agent_proc_search_operation_operator_return;;
+            =>nrel_then:.agent_proc_search_operation_operator_debug;;
+		    =>nrel_else:.agent_proc_search_operation_operator_return;;
+		*);;
+
+		-> .agent_proc_search_operation_operator_debug
+		(*
+			<- printNl;;
+			-> rrel_1: rrel_fixed: rrel_scp_const: [Start work of agent_proc_search_operation];;
+
+			=> nrel_goto: .agent_proc_search_operation_operator3;;
 		*);;
 
 		->.agent_proc_search_operation_operator3(*
@@ -44,7 +53,7 @@ scp_program->agent_proc_search_operation(*
 		<-genEl;;
 		->rrel_1:rrel_assign:rrel_const:rrel_node:rrel_scp_var:_answer;;
 
-		=>nrel_goto:.agent_proc_search_operation_operato5;;
+		=>nrel_goto:.agent_proc_search_operation_operator5;;
 		*);;
 	
 		->.agent_proc_search_operation_operator5(*
@@ -67,7 +76,7 @@ scp_program->agent_proc_search_operation(*
 		*);;
 		
 		->.agent_proc_search_operation_operator_gen_answer(*
-		<-searchElStr5;;
+		<-genElStr5;;
 		->rrel_1:rrel_fixed:rrel_scp_var:_quest;;
 		->rrel_2:rrel_assign:rrel_const:rrel_common:rrel_scp_var:_arc;;
 		->rrel_3:rrel_fixed:rrel_scp_var:_answer;;
